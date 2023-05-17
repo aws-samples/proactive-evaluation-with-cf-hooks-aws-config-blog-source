@@ -1,0 +1,57 @@
+{
+"typeName": "Demo::Testing::ConfigRuleHook",
+"description": "Runs AWS config rules evaluation for supported cloud resources before provisioning",
+"sourceUrl": "https://example.com/configrule-hook.git",
+"documentationUrl": "https://example.com/docs",
+"typeConfiguration": {
+    "properties": {
+        
+    },
+    "additionalProperties": false
+},
+"required": [],
+"handlers": {
+    "preCreate": {
+        "targetNames": [
+                "AWS::RDS::DBInstance",
+                "AWS::ApiGateway::Stage",
+                "AWS::AutoScaling::AutoScalingGroup",
+                "AWS::EC2::Instance",
+                "AWS::EC2::EIP",
+                "AWS::Elasticsearch::Domain",
+                "AWS::Lambda::Function",
+                "AWS::Redshift::Cluster",
+                "AWS::S3::Bucket",
+                "AWS::SNS::Topic",
+                "AWS::EC2::Subnet"
+        ],
+        "permissions": [
+            "config:StartResourceEvaluation",
+            "config:GetResourceEvaluationSummary",
+            "cloudformation:DescribeType"
+        ]
+    },
+    "preUpdate": {
+        "targetNames": [
+                "AWS::RDS::DBInstance",
+                "AWS::ApiGateway::Stage",
+                "AWS::AutoScaling::AutoScalingGroup",
+                "AWS::EC2::Instance",
+                "AWS::EC2::EIP",
+                "AWS::Elasticsearch::Domain",
+                "AWS::Lambda::Function",
+                "AWS::Redshift::Cluster",
+                "AWS::S3::Bucket",
+                "AWS::SNS::Topic",
+                "AWS::EC2::Subnet"
+        ],
+        "permissions": [
+            "config:StartResourceEvaluation",
+            "config:GetResourceEvaluationSummary",
+            "cloudformation:DescribeType"
+        ]
+    }
+},
+"additionalProperties": false
+}
+
