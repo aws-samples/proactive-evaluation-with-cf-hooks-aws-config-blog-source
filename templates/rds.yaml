@@ -46,5 +46,5 @@ Resources:
       MasterUsername: !Ref DBUsername
       MasterUserPassword: !Ref DBPassword
       PubliclyAccessible: false
-      StorageEncrypted: true
+      StorageEncrypted: false
       VPCSecurityGroups: !Ref SecurityGroupID
