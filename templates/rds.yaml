@@ -1,9 +1,9 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
 Description: >-
-  Description": "AWS CloudFormation Sample Template for creating an Amazon RDS DB instance: 
-  Sample template showing how to create a DB instance. 
-  **WARNING** This template creates an RDS DB instance. You will be billed for the AWS 
+  Description": "AWS CloudFormation Sample Template for creating an Amazon RDS DB instance:
+  Sample template showing how to create a DB instance.
+  **WARNING** This template creates an RDS DB instance. You will be billed for the AWS
   resources used if you create a stack from this template.
 Parameters:
   DBInstanceClass:
@@ -32,8 +32,8 @@ Parameters:
     Type: String
     MinLength: '8'
     MaxLength: '41'
-  SecurityGroupID: 
-    ConstraintDescription: must be a list of valid Security Group IDs    
+  SecurityGroupID:
+    ConstraintDescription: must be a list of valid Security Group IDs
     Description: Existing Security Group IDs
     Type: List<AWS::EC2::SecurityGroup::Id>
 Resources:
